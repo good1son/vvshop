@@ -1,0 +1,88 @@
+.burger {
+  display: none;
+  /* position: relative; */
+  position: fixed;
+  top: 35px;
+  right: 20px;
+  width: 30px;
+  aspect-ratio: 1;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid var(--color-light-gold);
+  border-radius: 4px;
+  z-index: var(--layer-mobile-burger);
+}
+
+.preloader.active ~ .burger {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.burger span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-light-gold));
+  border-radius: 2px;
+  transition:
+    top var(--transition-duration) ease,
+    opacity var(--transition-duration) ease;
+}
+
+.burger span:first-child {
+  top: 7px;
+}
+
+.burger span:nth-child(2) {
+  top: 13px;
+}
+
+.burger span:last-child {
+  top: 19px;
+}
+.burger.active span:first-child,
+.burger.active span:last-child {
+  top: 13px;
+  transition:
+    top var(--transition-duration) ease,
+    transform var(--transition-duration) ease var(--transition-duration);
+}
+
+.burger.active span:first-child {
+  transform: translateX(-50%) rotate(45deg);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-50%) scale(0);
+}
+.burger.active span:last-child {
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.burger:not(.active) span:first-child,
+.burger:not(.active) span:last-child {
+  transition:
+    transform var(--transition-duration) ease,
+    top var(--transition-duration) ease var(--transition-duration);
+}
+
+.burger:not(.active) span:first-child {
+  transform: translateX(-50%);
+  top: 7px;
+}
+
+.burger:not(.active) span:last-child {
+  transform: translateX(-50%);
+  top: 19px;
+}
+
+.burger:not(.active) span:nth-child(2) {
+  opacity: 1;
+  transform: translateX(-50%), scale(1);
+  transition:
+    opacity var(--transition-duration) ease var(--transition-duration),
+    transform var(--transition-duration) ease var(--transition-duration);
+}

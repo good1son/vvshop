@@ -1,0 +1,39 @@
+.stripe-top,
+.stripe-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  pointer-events: none;
+}
+
+.stripe-top {
+  top: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-gold),
+    transparent 100%
+  );
+}
+
+.stripe-bottom {
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-gold),
+    transparent 100%
+  );
+}
+
+/* background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-gold),
+      var(--color-light-gold),
+      var(--color-gold),
+      var(--color-dark-gold),
+      var(--color-gold),
+      transparent
+    ); */

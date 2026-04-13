@@ -1,0 +1,60 @@
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+.angle {
+  width: 20px;
+  position: absolute;
+  display: inline-block;
+  height: 20px;
+  opacity: 0.3;
+}
+
+.angle_top-left {
+  left: 0px;
+  top: 0px;
+  background-image: radial-gradient(
+    at right bottom,
+    rgba(var(--color-black-rgb), 0) 70%,
+    rgba(var(--color-white-rgb), 1) 72%
+  );
+}
+
+.angle_top-right {
+  right: 0px;
+  top: 0px;
+  background-image: radial-gradient(
+    at left bottom,
+    rgba(var(--color-black-rgb), 0) 70%,
+    rgba(var(--color-white-rgb), 1) 72%
+  );
+}
+
+.angle_bottom-right {
+  right: 0px;
+  bottom: 0px;
+  background-image: radial-gradient(
+    at left top,
+    rgba(var(--color-black-rgb), 0) 70%,
+    rgba(var(--color-white-rgb), 1) 72%
+  );
+}
+
+.angle_bottom-left {
+  left: 0px;
+  bottom: 0px;
+  background-image: radial-gradient(
+    at right top,
+    rgba(var(--color-black-rgb), 0) 70%,
+    rgba(var(--color-white-rgb), 1) 72%
+  );
+}

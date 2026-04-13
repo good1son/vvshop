@@ -1,0 +1,41 @@
+.button {
+  display: inline-block;
+  padding: 10px 24px;
+  border: none;
+  outline: none;
+  font-family: var(--second-font);
+  border-radius: 40px;
+  transition: all var(--transition-duration) ease;
+}
+
+.button_header {
+  align-self: center;
+  padding-inline: 10px;
+  color: inherit;
+  background: linear-gradient(
+    135deg,
+    var(--color-gold),
+    var(--color-dark-gold)
+  );
+  border: 2px solid var(--color-gold);
+  transition: linear-gradient var(--transition-duration);
+}
+
+.button_header:hover {
+  background: linear-gradient(
+    135deg,
+    var(--color-dark-gold),
+    var(--color-gold)
+  );
+  transform: scale(1.05);
+}
+
+.button_header:focus-visible {
+  background: transparent;
+  outline: 2px solid var(--color-gold);
+}
+
+.button_header:active {
+  background: transparent;
+  transform: scale(1);
+}

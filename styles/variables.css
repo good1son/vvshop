@@ -1,0 +1,56 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-deep-indigo: #282b3f;
+  --color-text: #ebebdc;
+
+  --color-black-rgb: 0, 0, 0;
+  --color-white-rgb: 255, 255, 255;
+  --color-deep-indigo-rgb: 40, 43, 63;
+
+  --color-dark-1: #1e1e1e;
+  --color-dark-2: #2c2c2c;
+
+  --color-gray-1: #f5f5f5;
+  --color-gray-2: #d9d9d9;
+  --color-gray-3: #b3b3b3;
+  --color-gray-4: #757575;
+
+  --color-gold: #b8860b;
+  --color-light-gold: #d4af37;
+  --color-dark-gold: #8b6914;
+
+  --color-title-header: #ecd9a1;
+
+  --border: 1px solid var(--color-gray-2);
+  --border-radius: 8px;
+
+  --box-shadow:
+    0 4px 4px -4px rgba(12, 12, 13, 0.05),
+    0 16px 32px -4px rgba(12, 12, 13, 0.1);
+
+  --input-height: 40px;
+
+  --transition-duration: 0.3s;
+
+  /* Fonts */
+  --first-font: "Bona Nova";
+  --header-font: "Oswald";
+  --second-font: "Inter";
+
+  --normal-weight: 400;
+  --medium-weight: 500;
+  --bold-weight: 700;
+
+  /* Layers */
+  --layer-under: 100;
+  --layer-content: 200;
+  --layer-mobile-menu: 250;
+  --layer-mobile-burger: 299;
+
+  --leyer-loader: 999;
+
+  --not-visible: -1;
+  --slider-not-active: 1;
+  --slider-active: 2;
+}
