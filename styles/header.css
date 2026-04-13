@@ -221,8 +221,18 @@
 
   .header-content {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-content {
+    justify-content: start;
+  }
+
+  .mobile-title {
+    font-size: 18px;
   }
 }

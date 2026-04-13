@@ -65,6 +65,7 @@
   letter-spacing: 2px;
   text-align: center;
   color: var(--color-light-gold);
+  font-size: 18px;
 }
 
 /* .mobile-menu__link::before {
