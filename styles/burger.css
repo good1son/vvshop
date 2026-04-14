@@ -1,9 +1,6 @@
 .burger {
   display: none;
-  /* position: relative; */
-  position: fixed;
-  top: 35px;
-  right: 20px;
+  position: relative;
   width: 30px;
   aspect-ratio: 1;
   background-color: transparent;
@@ -11,12 +8,6 @@
   border: 1px solid var(--color-light-gold);
   border-radius: 4px;
   z-index: var(--layer-mobile-burger);
-}
-
-.preloader.active ~ .burger {
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
 }
 
 .burger span {

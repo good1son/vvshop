@@ -19,7 +19,8 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-  animation: fadeInContent 0.5s ease-out 1s both;
+  min-height: 100dvh;
+  /* animation: fadeInContent 0.5s ease-out 1s both; */
 
   z-index: var(--layer-content);
 }
@@ -88,7 +89,7 @@
 }
 
 .hero__title {
-  font-size: clamp(28px, 5vw, 72px);
+  font-size: clamp(24px, 5vw, 72px);
   letter-spacing: 0.02em;
   line-height: 1.2;
   text-align: center;
@@ -122,4 +123,8 @@
   .hero__description_desktop {
     display: none;
   }
+}
+
+.hero-wrapper:has(.mobile-menu.open) .hero-content {
+  display: none;
 }

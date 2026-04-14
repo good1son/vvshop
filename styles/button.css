@@ -10,7 +10,9 @@
 
 .button_header {
   align-self: center;
-  padding-inline: 10px;
+  font-size: clamp (11px, 1vw, 14px);
+  padding: clamp(8px, 1vw, 12px) clamp(10px, 1.5vw, 20px);
+  white-space: nowrap;
   color: inherit;
   background: linear-gradient(
     135deg,
