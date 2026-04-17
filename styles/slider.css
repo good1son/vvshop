@@ -1,0 +1,142 @@
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+}
+
+.slider-wrapper {
+  overflow-x: hidden;
+  flex: 1;
+  max-width: calc(100% - 120px);
+}
+
+.slider-track {
+  display: flex;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  transition: transform calc(var(--transition-duration) * 2)
+    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slider-slide {
+  flex: 0 0 calc(25% - 23px);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.slider-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #c6a56e;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.slider-btn:hover {
+  background: #c6a56e;
+  transform: scale(1.05);
+}
+
+.btn-prev::before,
+.btn-next::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-left: 2px solid #ebd5a8;
+  border-bottom: 2px solid #ebd5a8;
+}
+
+.btn-prev::before {
+  transform: translate(-40%, -50%) rotate(45deg);
+}
+
+.btn-next::before {
+  transform: translate(-60%, -50%) rotate(-135deg);
+}
+
+.slider-btn:hover::before {
+  border-color: var(--color-deep-indigo);
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(198, 165, 110, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #c6a56e;
+  width: 24px;
+  border-radius: 5px;
+}
+
+@media (max-width: 1400px) {
+  .slider-slide {
+    flex: 0 0 calc(33.333% - 20px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .slider-slide {
+    flex: 0 0 calc(50% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-dots {
+    display: none;
+  }
+  .slider-container {
+    gap: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  .slider-slide {
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .slider-track {
+    display: flex;
+    gap: 16px;
+  }
+
+  .slider-btn {
+    display: none;
+  }
+
+  .slider-wrapper {
+    max-width: 100%;
+    padding: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+}

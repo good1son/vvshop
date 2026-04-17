@@ -11,6 +11,21 @@
   overflow: hidden !important;
 }
 
+.title {
+  font-size: clamp(26px, 5vw, 72px);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: clamp(14px, 1vw, 16px);
+}
+
+.logo-graving {
+  mix-blend-mode: hard-light;
+  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.4));
+}
+
 .angle {
   width: 20px;
   position: absolute;

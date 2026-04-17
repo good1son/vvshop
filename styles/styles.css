@@ -12,6 +12,9 @@
 @import "./burger.css";
 @import "./header.css";
 @import "./mobile-menu.css";
+@import "./new-item.css";
+@import "./card.css";
+@import "./slider.css";
 
 .hero-wrapper {
   position: relative;
@@ -88,13 +91,6 @@
   }
 }
 
-.hero__title {
-  font-size: clamp(24px, 5vw, 72px);
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-  text-align: center;
-}
-
 .hero__decor {
   width: 100%;
   max-width: clamp(300px, 50vw, 600px);
@@ -105,7 +101,6 @@
 
 .hero__description {
   max-width: clamp(280px, 50vw, 650px);
-  font-size: clamp(14px, 1vw, 16px);
 }
 
 .hero__description_desktop {

@@ -3,7 +3,7 @@
   display: flex;
   align-items: stretch;
   column-gap: clamp(0.5rem, 3vw, 2.5rem);
-  padding: 20px clamp(5px, 3vw, 20px);
+  padding: 20px clamp(5px, 2vw, 20px);
 }
 
 .header__company,
@@ -140,7 +140,7 @@
   }
 
   .header-content {
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
   }
