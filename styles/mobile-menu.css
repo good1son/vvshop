@@ -1,13 +1,17 @@
 .mobile-menu {
   position: fixed;
   inset: 0;
+
+  opacity: 0;
+
   z-index: var(--layer-mobile-menu);
   visibility: hidden;
-  transition: visibility 0s ease var(--transition-duration);
+  transition: all 0s ease var(--transition-duration);
 }
 
 .mobile-menu.open {
   visibility: visible;
+  opacity: 1;
   transition: visibility 0s ease;
 }
 

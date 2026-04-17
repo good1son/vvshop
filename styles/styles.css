@@ -123,3 +123,7 @@
 .hero-wrapper:has(.mobile-menu.open) .hero-content {
   visibility: hidden;
 }
+
+.hero-wrapper:has(.mobile-menu.open) .new-item__container {
+  display: none;
+}

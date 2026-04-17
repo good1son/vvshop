@@ -1,10 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const burgerButton = document.querySelector(".burger");
   const mobileMenu = document.querySelector(".mobile-menu");
+  const newItem = document.querySelector(".new-item");
   if (burgerButton && mobileMenu) {
     burgerButton.addEventListener("click", () => {
       burgerButton.classList.toggle("active");
       mobileMenu.classList.toggle("open");
+      console.log(newItem);
+
+      newItem.style.display = mobileMenu.classList.contains("open")
+        ? "none"
+        : "block";
     });
   }
 
