@@ -1,0 +1,128 @@
+.about-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 50px; */
+}
+
+.about-us__img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  flex-shrink: 1;
+}
+
+.about-us__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  text-align: end;
+  row-gap: clamp(20px, 1.5vw, 40px);
+}
+
+.about-us__title {
+  font-size: clamp(26px, 4vw, 60px);
+
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.about-us__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.about-us__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: clamp(280px, 20vw, 650px);
+  text-align: start;
+}
+
+.about-us__icon {
+  width: 100%;
+  max-width: 80px;
+  height: auto;
+}
+
+.about-us__card-title {
+  font-size: clamp(14px, 1.4rem, 36px);
+  font-weight: normal;
+  line-height: 1;
+}
+
+.about-us__card-description {
+  text-align: start;
+}
+
+@media (max-width: 768px) {
+  .about-us__img {
+    display: none;
+  }
+
+  .about-us {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-us__top {
+    justify-content: center;
+  }
+
+  .about-us::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-image: url("../img/clock-decor.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+  }
+
+  .about-us__info {
+    position: relative;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-us__content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-us__card {
+    gap: 5px;
+  }
+  .about-us__card-title,
+  .about-us__card-description {
+    text-align: center;
+  }
+}
+
+/* .title {
+  font-size: clamp(26px, 5vw, 72px);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: clamp(14px, 1vw, 16px);
+} */

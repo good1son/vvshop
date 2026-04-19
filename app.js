@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     burgerButton.addEventListener("click", () => {
       burgerButton.classList.toggle("active");
       mobileMenu.classList.toggle("open");
-      console.log(newItem);
-
       newItem.style.display = mobileMenu.classList.contains("open")
         ? "none"
         : "block";

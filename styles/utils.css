@@ -19,6 +19,7 @@
 
 .description {
   font-size: clamp(14px, 1vw, 16px);
+  max-width: clamp(280px, 50vw, 650px);
 }
 
 .logo-graving {

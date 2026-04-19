@@ -1,21 +1,12 @@
-/* body {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  min-height: 100vh;
-  padding: 100px 30px;
-  font-family: 'Inter', sans-serif;
-  background-color: var(--color-gray-1);
+.content {
+  opacity: 0;
+  pointer-events: none;
+  animation: showContent var(--transition-duration) 1s forwards;
 }
 
-input,
-label,
-button {
-  transition-duration: var(--transition-duration);
+@keyframes showContent {
+  to {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
-
-:focus-visible {
-  outline: 2px dashed var(--color-black);
-  outline-offset: 4px;
-  transition-duration: 0s !important;
-} */
