@@ -67,7 +67,7 @@
   text-align: start;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .about-us__img {
     display: none;
   }
