@@ -69,3 +69,9 @@
     text-align: center;
   }
 }
+
+@media (max-width: 768px) {
+  .new-item__container {
+    padding: 20px;
+  }
+}

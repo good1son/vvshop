@@ -70,7 +70,7 @@
                 </li>
               </ul>
             </nav>
-            <button class="button button_header">Связаться с нами</button>
+            <a href="#contact" class="button button_header">Связаться с нами</a>
             <button class="burger">
               <span></span>
               <span></span>
@@ -310,8 +310,12 @@
         </div>
       </section>
 
-      <section class="about-us">
-        <div class="about-us__top container">
+      <section class="about-us container">
+        <h2 class="about-us__title title">
+          Почему наши<br />
+          клиенты выбирают нас?
+        </h2>
+        <div class="about-us__top">
           <div class="about-us__img">
             <img
               src="./img/clock-decor.jpg"
@@ -319,10 +323,6 @@
             />
           </div>
           <div class="about-us__info">
-            <h2 class="about-us__title title">
-              Почему наши<br />
-              клиенты выбирают нас?
-            </h2>
             <p class="about-us__description description">
               Мы ценим доверие и предлагаем не только высококачественные услуги,
               но и индивидуальный подход к каждому клиенту. Многолетний опыт,
@@ -360,34 +360,50 @@
             </div>
           </div>
         </div>
-        <!-- <div class="about-us__content">
-          <div class="about-us__left">
-            <div class="about-us__card">
-              <div class="about-us__icon">
-                <img src="./img/icons/icon-1.png" alt="Иконка оценщика" />
-              </div>
-              <h3 class="about-us__card-title title">Экспертиза и опыт</h3>
-              <p class="about-us__card-description description">
-                Более 8 лет мы помогаем ценителям прекрасного находить,
-                восстанавливать и сохранять антикварные предметы.
-              </p>
+      </section>
+
+      <section id="contact" class="contact-us">
+        <div class="contact-us__content container">
+          <form action="" class="contact-us__form form">
+            <h2 class="form__title title">
+              Отправьте заявку<br />
+              мы свяжемся с Вами!
+            </h2>
+            <div class="form__top">
+              <label for="name" class="visually-hidden">Ваше имя: </label>
+              <input
+                class="form__input input"
+                id="name"
+                type="text"
+                placeholder="Ваше имя"
+              />
+
+              <label for="tel" class="visually-hidden">Телефон: </label>
+              <input
+                class="form__input input"
+                id="tel"
+                type="tel"
+                placeholder="Телефон"
+              />
             </div>
-          </div>
-          <div class="about-us__right">
-            <div class="about-us__card">
-              <div class="about-us__icon">
-                <img src="./img/icons/icon-2.png" alt="Иконка оценщика" />
-              </div>
-              <h3 class="about-us__card-title title">
-                Прозрачная ценовая политика
-              </h3>
-              <p class="about-us__card-description description">
-                Мы предлагаем справедливые цены, основанные на рыночной
-                стоимости и экспертной оценке антикварных предметов.
-              </p>
-            </div>
-          </div>
-        </div> -->
+
+            <label for="email" class="visually-hidden">e-mail: </label>
+            <input
+              class="form__input input"
+              id="email"
+              type="email"
+              placeholder="e-mail"
+            />
+
+            <textarea
+              class="form__textarea textarea"
+              name="message"
+              placeholder="Комментарий"
+            ></textarea>
+
+            <button class="button button_form" type="submit">Отправить</button>
+          </form>
+        </div>
       </section>
     </div>
   </body>

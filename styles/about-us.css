@@ -2,14 +2,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: end;
+  row-gap: 20px;
+  padding: 40px;
 }
 
 .about-us__top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* gap: 50px; */
+  gap: clamp(10px, 2.7vw, 50px);
 }
 
 .about-us__img {
@@ -23,21 +25,25 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: end;
-  text-align: end;
+  align-items: start;
+  text-align: start;
   row-gap: clamp(20px, 1.5vw, 40px);
 }
 
 .about-us__title {
   font-size: clamp(26px, 4vw, 60px);
-
+  text-align: end;
   line-height: 1;
   white-space: nowrap;
 }
 
+.about-us__description {
+  max-width: 100%;
+}
+
 .about-us__content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 2fr;
   gap: 20px;
 }
 
@@ -45,27 +51,27 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
+  align-items: start;
+  gap: 15px;
   max-width: clamp(280px, 20vw, 650px);
-  text-align: start;
 }
 
 .about-us__icon {
   width: 100%;
-  max-width: 80px;
+  max-width: clamp(60px, 5vw, 80px);
   height: auto;
 }
 
 .about-us__card-title {
-  font-size: clamp(14px, 1.4rem, 36px);
+  font-size: clamp(24px, 1.3vw, 36px);
   font-weight: normal;
   line-height: 1;
+  white-space: nowrap;
 }
 
-.about-us__card-description {
+/* .about-us__card-description {
   text-align: start;
-}
+} */
 
 @media (max-width: 850px) {
   .about-us__img {
@@ -78,6 +84,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
   }
 
   .about-us__top {
@@ -98,6 +105,10 @@
     opacity: 0.1;
   }
 
+  .about-us__description {
+    max-width: clamp(280px, 50vw, 650px);
+  }
+
   .about-us__info {
     position: relative;
     align-items: center;
@@ -109,11 +120,15 @@
   }
 
   .about-us__card {
+    align-items: center;
     gap: 5px;
   }
+
+  .about-us__title,
   .about-us__card-title,
   .about-us__card-description {
     text-align: center;
+    white-space: wrap;
   }
 }
 

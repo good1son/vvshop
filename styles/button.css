@@ -8,12 +8,13 @@
   transition: all var(--transition-duration) ease;
 }
 
+.button_form,
 .button_header {
   align-self: center;
-  font-size: clamp (11px, 1vw, 14px);
-  padding: clamp(8px, 1vw, 12px) clamp(10px, 1.5vw, 20px);
+  font-size: clamp(14px, 1.5vw, 18px);
+  padding: clamp(10px, 1.5vw, 14px);
   white-space: nowrap;
-  color: inherit;
+  color: var(--color-white);
   background: linear-gradient(
     135deg,
     var(--color-gold),
@@ -23,6 +24,12 @@
   transition: linear-gradient var(--transition-duration);
 }
 
+.button_form {
+  width: 50%;
+  padding: 1rem;
+}
+
+.button_form:hover,
 .button_header:hover {
   background: linear-gradient(
     135deg,
@@ -32,11 +39,13 @@
   transform: scale(1.05);
 }
 
+.button_form:focus-visible,
 .button_header:focus-visible {
   background: transparent;
   outline: 2px solid var(--color-gold);
 }
 
+.button_form:active,
 .button_header:active {
   background: transparent;
   transform: scale(1);

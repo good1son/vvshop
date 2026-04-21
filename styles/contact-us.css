@@ -1,0 +1,58 @@
+@import "./form.css";
+
+.contact-us {
+  position: relative;
+  background-image: url("../img/bg/bg-paralax.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.contact-us::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    rgba(var(--color-deep-indigo-rgb), 1) 0%,
+    rgba(var(--color-deep-indigo-rgb), 0.85) 5%,
+    rgba(var(--color-deep-indigo-rgb), 0.5) 12%,
+    rgba(var(--color-deep-indigo-rgb), 0.2) 20%,
+    rgba(var(--color-deep-indigo-rgb), 0) 30%,
+    rgba(var(--color-deep-indigo-rgb), 0.15) 70%,
+    rgba(var(--color-deep-indigo-rgb), 0.6) 85%,
+    rgba(var(--color-deep-indigo-rgb), 1) 100%
+  );
+  z-index: var(--layer-under);
+}
+
+.contact-us::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(var(--color-deep-indigo-rgb), 0.5);
+  z-index: var(--layer-under);
+}
+
+.contact-us > * {
+  position: relative;
+  z-index: var(--layer-content);
+}
+
+.contact-us__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+}
+
+@media (max-width: 850px) {
+  .contact-us {
+    background-position: left;
+  }
+}

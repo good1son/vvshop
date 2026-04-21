@@ -16,6 +16,7 @@
 @import "./card.css";
 @import "./slider.css";
 @import "./about-us.css";
+@import "./contact-us.css";
 
 .hero-wrapper {
   position: relative;
