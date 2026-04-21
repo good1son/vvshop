@@ -1,5 +1,3 @@
-@import "./form.css";
-
 .contact-us {
   position: relative;
   background-image: url("../img/bg/bg-paralax.jpg");
@@ -51,8 +49,9 @@
   min-height: 100vh;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 768px) {
   .contact-us {
+    min-height: 100svh;
     background-position: left;
   }
 }

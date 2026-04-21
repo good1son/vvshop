@@ -12,10 +12,7 @@
   cursor: pointer;
   position: relative;
   padding-block: 5px 20px;
-  box-shadow:
-    0 30px 40px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(230, 200, 150, 0.5) inset,
-    0 0 0 4px #f3e9ce inset;
+  box-shadow: 6px 8px 12px rgba(0, 0, 0, 0.5);
   transform-style: preserve-3d;
   transition: all var(--transition-duration) ease;
 }

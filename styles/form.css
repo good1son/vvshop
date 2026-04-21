@@ -72,6 +72,6 @@
 
   .form__input::placeholder,
   .form__textarea::placeholder {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
