@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Вне Времени</title>
+    <title>«Вне Времени»</title>
     <link rel="stylesheet" href="./styles/styles.css" />
     <script src="app.js" defer></script>
   </head>
@@ -22,13 +22,6 @@
 
       <div class="hero-wrapper">
         <header class="header container">
-          <!-- <address class="address">
-          <strong>г. Москва, ул. Садовая - Черногрязская</strong>
-          <div class="address-info">
-            <p>Пн-Пт: с 09:00 до 21:00</p>
-            <a href="tel: +70000000000">+7(000)000-00-00</a>
-          </div>
-        </address> -->
           <div class="header-content">
             <div class="header__company">
               <div class="stripe-top"></div>
@@ -55,22 +48,22 @@
               <div class="stripe-top"></div>
               <div class="stripe-bottom"></div>
 
-              <ul class="nav-list">
-                <li class="nav-item">
-                  <a href="" class="nav-link">Главная</a>
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="" class="nav__link link">Главная</a>
                 </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">Каталог</a>
+                <li class="nav__item">
+                  <a href="" class="nav__link link">Каталог</a>
                 </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">О компании</a>
+                <li class="nav__item">
+                  <a href="" class="nav__link link">О компании</a>
                 </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">Справочник коллекционера</a>
+                <li class="nav__item">
+                  <a href="" class="nav__link link">Справочник коллекционера</a>
                 </li>
               </ul>
             </nav>
-            <a href="#contact" class="button button_header">Связаться с нами</a>
+            <button class="button button_header">Связаться с нами</button>
             <button class="burger">
               <span></span>
               <span></span>
@@ -91,18 +84,22 @@
                 <nav class="mobile-menu__nav">
                   <ul class="mobile-menu__list">
                     <li class="mobile-menu__item">
-                      <a href="" class="mobile-menu__link nav-link">Главная</a>
+                      <a href="" class="mobile-menu__link nav__link link"
+                        >Главная</a
+                      >
                     </li>
                     <li class="mobile-menu__item">
-                      <a href="" class="mobile-menu__link nav-link">Каталог</a>
+                      <a href="" class="mobile-menu__link nav__link link"
+                        >Каталог</a
+                      >
                     </li>
                     <li class="mobile-menu__item">
-                      <a href="" class="mobile-menu__link nav-link"
+                      <a href="" class="mobile-menu__link nav__link link"
                         >О компании</a
                       >
                     </li>
                     <li class="mobile-menu__item">
-                      <a href="" class="mobile-menu__link nav-link"
+                      <a href="" class="mobile-menu__link nav__link link"
                         >Справочник коллекционера</a
                       >
                     </li>
@@ -361,7 +358,6 @@
           </div>
         </div>
       </section>
-
       <section id="contact" class="contact-us">
         <div class="contact-us__content container">
           <form action="" class="contact-us__form form">
@@ -377,7 +373,6 @@
                 type="text"
                 placeholder="Ваше имя"
               />
-
               <label for="tel" class="visually-hidden">Телефон: </label>
               <input
                 class="form__input input"
@@ -386,7 +381,6 @@
                 placeholder="Телефон"
               />
             </div>
-
             <label for="email" class="visually-hidden">e-mail: </label>
             <input
               class="form__input input"
@@ -394,17 +388,197 @@
               type="email"
               placeholder="e-mail"
             />
-
             <textarea
               class="form__textarea textarea"
               name="message"
               placeholder="Комментарий"
             ></textarea>
-
             <button class="button button_form" type="submit">Отправить</button>
           </form>
         </div>
       </section>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__map">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=37.653012,55.766645&z=15.5&pt=37.653269,55.766488,pmrdl~63~Антикварный салон «Вне Времени»"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              allowfullscreen
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+
+          <nav class="footer__navigation">
+            <div class="stripe-top"></div>
+            <div class="stripe-bottom"></div>
+            <ul class="nav__list nav__list_footer">
+              <li class="nav__item">
+                <a href="" class="nav__link_footer link">Каталог</a>
+              </li>
+              <li class="nav__item">
+                <a href="" class="nav__link_footer link">О компании</a>
+              </li>
+              <li class="nav__item">
+                <a href="" class="nav__link_footer link"
+                  >Справочник коллекционера</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <address
+            class="footer__contacts"
+            itemscope
+            itemtype="https://schema.org/Organization"
+          >
+            <span class="visually-hidden" itemprop="name"
+              >Антикварный салон «Вне Времени»</span
+            >
+            <div class="contacts__item">
+              <a
+                class="contacts__link link"
+                href="tel:+79261608022"
+                itemprop="telephone"
+              >
+                <svg
+                  class="contacts__icon icon-tel"
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                >
+                  <use href="./img/sprite.svg#tel-icon"></use>
+                </svg>
+                +7 (926) 168-80-22</a
+              >
+            </div>
+            <div class="contacts__item">
+              <a
+                class="contacts__link link"
+                href="mailto:shop@shopvv.ru"
+                itemprop="email"
+              >
+                <svg
+                  class="contacts__icon icon-mail_old"
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                >
+                  <use href="./img/sprite.svg#mail-icon"></use>
+                </svg>
+                <svg
+                  class="contacts__icon icon-mail_new"
+                  width="24"
+                  height="24"
+                  aria-hidden="true"
+                >
+                  <use href="./img/sprite.svg#mail-icon"></use>
+                </svg>
+                shop@shopvv.ru</a
+              >
+            </div>
+            <div
+              class="contacts__item"
+              itemprop="address"
+              itemscope
+              itemtype="https://schema.org/PostalAddress"
+            >
+              <span itemprop="addressLocality">Москва,</span>
+              <span itemprop="streetAddress"
+                >ул. Садовая-Черногрязская, д. 5/9</span
+              >
+            </div>
+            <div
+              class="contacts__item"
+              itemprop="openingHoursSpecification"
+              itemscope
+              itemtype="https://schema.org/OpeningHoursSpecification"
+            >
+              <meta
+                itemprop="dayOfWeek"
+                content="Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday"
+              />
+              <meta itemprop="opens" content="10:30" />
+              <meta itemprop="closes" content="19:30" />
+              <span class="work-hours-text">
+                <svg
+                  class="contacts__icon icon-clock"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                    stroke="currentColor"
+                    fill="none"
+                  />
+                  <line
+                    class="clock-hour"
+                    x1="12"
+                    y1="12"
+                    x2="12"
+                    y2="8"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    transform="rotate(-60 12 12)"
+                  />
+                  <line
+                    class="clock-minute"
+                    x1="12"
+                    y1="12"
+                    x2="12"
+                    y2="5"
+                    stroke="currentColor"
+                    stroke-width="1.2"
+                    transform="rotate(180 12 12)"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="1.5"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+                Пн–Вс: 10:30 – 19:30</span
+              >
+            </div>
+            <div class="socials">
+              <ul class="socials__list">
+                <li class="socials__item">
+                  <a href="" class="socials__link" aria-label="Вконтакте">
+                    <svg class="socials__icon icon-vk">
+                      <use href="./img/sprite.svg#vk-icon"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a href="" class="socials__link" aria-label="WhatsApp">
+                    <svg class="socials__icon icon-wa">
+                      <use href="./img/sprite.svg#wa-icon"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a href="" class="socials__link" aria-label="Telegram">
+                    <svg class="socials__icon icon-tg">
+                      <use href="./img/sprite.svg#tg-icon"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </address>
+        </div>
+        <button class="button scroll-top"></button>
+      </footer>
     </div>
   </body>
 </html>

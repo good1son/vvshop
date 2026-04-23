@@ -12,6 +12,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const scrollContact = document.querySelector(".button_header");
+  const scrollTop = document.querySelector(".scroll-top");
+  const contactSection = document.querySelector("#contact");
+
+  scrollContact.addEventListener("click", (e) => {
+    e.preventDefault();
+    contactSection.scrollIntoView();
+  });
+
+  scrollTop.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0 });
+  });
+
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     card.addEventListener("click", (e) => {

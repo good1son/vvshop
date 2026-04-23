@@ -7,6 +7,7 @@
   --color-black-rgb: 0, 0, 0;
   --color-white-rgb: 255, 255, 255;
   --color-deep-indigo-rgb: 40, 43, 63;
+  --color-darkest-gold-rgb: 212, 175, 55;
 
   --color-dark-1: #1e1e1e;
   --color-dark-2: #2c2c2c;
@@ -21,6 +22,8 @@
   --color-dark-gold: #8b6914;
 
   --color-title-header: #ecd9a1;
+  --color-light-beige: #e0d6b5;
+  --color-link-hover: #e8d88e;
 
   --border: 1px solid var(--color-gray-2);
   --border-radius: 8px;
@@ -38,6 +41,7 @@
   --header-font: "Oswald";
   --second-font: "Inter";
   --card-font: "Courier New";
+  --times-font: "Georgia", "Times New Roman", serif;
 
   --normal-weight: 400;
   --medium-weight: 500;

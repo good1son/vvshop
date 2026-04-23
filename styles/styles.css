@@ -18,6 +18,7 @@
 @import "./about-us.css";
 @import "./contact-us.css";
 @import "./form.css";
+@import "./footer.css";
 
 .hero-wrapper {
   position: relative;

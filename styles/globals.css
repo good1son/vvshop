@@ -10,3 +10,12 @@
     pointer-events: auto;
   }
 }
+
+.link {
+  color: var(--color-light-beige);
+  transition: all var(--transition-duration);
+}
+
+.link:hover {
+  color: var(--color-link-hover);
+}
