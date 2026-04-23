@@ -77,6 +77,7 @@
 
 .card__info {
   position: relative;
+  font-family: var(--card-font);
 }
 
 .card__info::before,
@@ -87,11 +88,18 @@
   right: 0;
   height: 2px;
   text-align: center;
-  font-family: "Courier New", "Fira Code", monospace;
   font-size: 0.75rem;
   letter-spacing: 0.5px;
   color: #2c221b;
   border-top: 1px solid #e2cfaa;
+}
+
+.card__info::before {
+  top: -5px;
+}
+
+.card__info::after {
+  bottom: -5px;
 }
 
 .card__title {
@@ -106,8 +114,8 @@
 
 .card__description {
   font-family: var(--card-font);
+  font-style: italic;
   font-size: 0.8rem;
-  text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
   color: #9c7c4a;
@@ -168,25 +176,3 @@
     font-size: 0.7rem;
   }
 }
-
-/* <div class="new-item__card card">
-                    <div class="card__image-wrapper">
-                      <img
-                        class="card__image"
-                        src="./img/slide-1.jpg"
-                        width="300"
-                        alt=""
-                        class="card__image"
-                      />
-                    </div>
-                    <div class="card__info">
-                      <h3 class="card__title">Чайник доливной «Малинка»</h3>
-                      <p class="card__description">
-                        Н.Хренов, СССР, Дулево, 1984г.
-                      </p>
-                    </div>
-                    <div class="card__price">
-                      <span class="price">25 000</span
-                      ><span class="price_rub">₽</span>
-                    </div>
-                  </div> */

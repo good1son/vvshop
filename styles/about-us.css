@@ -69,10 +69,6 @@
   white-space: nowrap;
 }
 
-/* .about-us__card-description {
-  text-align: start;
-} */
-
 @media (max-width: 850px) {
   .about-us__img {
     display: none;

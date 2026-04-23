@@ -36,18 +36,16 @@
 
   --transition-duration: 0.3s;
 
-  /* Fonts */
   --first-font: "Bona Nova";
   --header-font: "Oswald";
   --second-font: "Inter";
-  --card-font: "Courier New";
-  --times-font: "Georgia", "Times New Roman", serif;
+  --card-font: "Courier Prime";
+  --georgia-font: "Georgia";
 
   --normal-weight: 400;
   --medium-weight: 500;
   --bold-weight: 700;
 
-  /* Layers */
   --layer-under: 100;
   --layer-content: 200;
   --layer-mobile-menu: 250;
