@@ -77,7 +77,7 @@
 
 .card__info {
   position: relative;
-  font-family: var(--card-font);
+  font-family: var(--card-font-1);
 }
 
 .card__info::before,
@@ -113,8 +113,7 @@
 }
 
 .card__description {
-  font-family: var(--card-font);
-  font-style: italic;
+  font-family: var(--card-font-1);
   font-size: 0.8rem;
   letter-spacing: 1px;
   text-align: center;

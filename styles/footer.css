@@ -117,6 +117,7 @@
   gap: 1.5rem;
 
   font-family: var(--georgia-font);
+  font-style: italic;
   color: var(--color-light-beige);
   line-height: 1.4;
 
@@ -147,7 +148,6 @@
 
 .contacts__link {
   position: relative;
-  font-style: italic;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -338,13 +338,16 @@
   transform: translate(-50%, -25%) rotate(45deg);
 }
 
-.scroll-top:hover,
-.scroll-top:active {
-  color: var(--color-deep-indigo);
-  background: var(--color-gold);
+@media (hover: hover) {
+  .scroll-top:hover {
+    color: var(--color-deep-indigo);
+    background: var(--color-gold);
+  }
 }
 
 .scroll-top:active {
+  color: var(--color-deep-indigo);
+  background: var(--color-gold);
   transform: translateX(-50%) scale(0.95);
 }
 
@@ -401,6 +404,9 @@
     content: "";
     width: 12px;
     height: 12px;
-    transform: translate(-50%, -25%) rotate(45deg);
+  }
+
+  .scroll-top:hover {
+    /* pointer-events: none; */
   }
 }
