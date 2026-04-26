@@ -22,6 +22,17 @@
   max-width: clamp(280px, 50vw, 650px);
 }
 
+.link {
+  color: var(--color-light-beige);
+  transition: all var(--transition-duration);
+}
+
+@media (hover: hover) {
+  .link:hover {
+    color: var(--color-link-hover);
+  }
+}
+
 .logo-graving {
   mix-blend-mode: hard-light;
   filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.4));

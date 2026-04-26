@@ -29,14 +29,16 @@
   padding: 1rem;
 }
 
-.button_form:hover,
-.button_header:hover {
-  background: linear-gradient(
-    135deg,
-    var(--color-dark-gold),
-    var(--color-gold)
-  );
-  transform: scale(1.05);
+@media (hover: hover) {
+  .button_form:hover,
+  .button_header:hover {
+    background: linear-gradient(
+      135deg,
+      var(--color-dark-gold),
+      var(--color-gold)
+    );
+    transform: scale(1.05);
+  }
 }
 
 .button_form:focus-visible,

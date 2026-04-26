@@ -1,0 +1,126 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  min-height: 100vh;
+  z-index: var(--layer-content);
+}
+
+.hero > * {
+  position: relative;
+  z-index: var(--layer-content);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background:
+    linear-gradient(rgba(var(--color-deep-indigo-rgb), 0.25)),
+    linear-gradient(
+      rgba(var(--color-black-rgb), 0.5) 0%,
+      rgba(var(--color-deep-indigo-rgb), 0.7) 0%,
+      rgba(var(--color-black-rgb), 0) 25%,
+      rgba(var(--color-black-rgb), 0) 45%,
+      rgba(var(--color-deep-indigo-rgb), 0.4) 75%,
+      rgba(var(--color-deep-indigo-rgb), 1) 100%
+    );
+  z-index: var(--layer-under);
+}
+
+.hero__content {
+  margin-bottom: clamp(20px, 5vh, 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1em;
+  color: var(--color-white);
+  text-align: center;
+}
+
+.hero__decor {
+  width: 100%;
+  max-width: clamp(300px, 50vw, 600px);
+  height: auto;
+  object-fit: contain;
+}
+
+.hero__description_desktop {
+  display: block;
+}
+
+.hero__description_mobile {
+  display: none;
+}
+
+.hero__title,
+.hero__decor,
+.hero__description {
+  opacity: 0;
+}
+
+.preloader.loaded ~ .content .hero__title {
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+.preloader.loaded ~ .content .hero__description {
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+.preloader.loaded ~ .content .hero__decor {
+  animation: scaleDecor 0.6s 0.3s ease forwards;
+}
+
+.preloader.loaded ~ .content .hero__content {
+  animation: fadeInHeroContent 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInHeroContent {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleDecor {
+  from {
+    scale: 0;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1103px) {
+  .hero__description_mobile {
+    display: block;
+  }
+  .hero__description_desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+  }
+}
