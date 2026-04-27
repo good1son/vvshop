@@ -18,7 +18,7 @@
 .mobile-menu__content {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   row-gap: 30px;
 

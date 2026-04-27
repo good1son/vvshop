@@ -130,6 +130,11 @@
   letter-spacing: 2.5px;
 }
 
+.contacts__item_street {
+  font-size: clamp(10px, 3.5vw, 16px);
+  flex-wrap: wrap;
+}
+
 .contacts__icon {
   transition:
     transform var(--transition-duration) ease,
