@@ -38,12 +38,21 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMenu.classList.remove("open");
   };
 
-  const scrollContact = document.querySelector(".button_header");
+  const headerButton = document.querySelector(".button_header");
+  const mobileMenuButton = document.querySelector(".mobile-menu__button");
   const scrollTop = document.querySelector(".scroll-top");
   const contactSection = document.querySelector("#contact");
 
-  scrollContact.addEventListener("click", (e) => {
+  headerButton.addEventListener("click", (e) => {
     e.preventDefault();
+    contactSection.scrollIntoView();
+  });
+
+  mobileMenuButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (mobileMenu.classList.contains("open")) {
+      closeMenu();
+    }
     contactSection.scrollIntoView();
   });
 

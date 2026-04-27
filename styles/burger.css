@@ -8,6 +8,11 @@
   border: 1px solid var(--color-light-gold);
   border-radius: 4px;
   z-index: var(--layer-mobile-burger);
+  transition: border-color var(--transition-duration) ease;
+}
+
+.burger.active {
+  border-color: var(--color-light-beige);
 }
 
 .burger span {
@@ -18,9 +23,11 @@
   height: 2px;
   background: linear-gradient(90deg, var(--color-light-gold));
   border-radius: 2px;
-  transition:
-    top var(--transition-duration) ease,
-    opacity var(--transition-duration) ease;
+  transition: all var(--transition-duration) ease;
+}
+
+.burger.active span {
+  background: linear-gradient(90deg, var(--color-light-beige));
 }
 
 .burger span:first-child {

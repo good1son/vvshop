@@ -33,11 +33,6 @@
   }
 }
 
-.logo-graving {
-  mix-blend-mode: hard-light;
-  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.4));
-}
-
 .angle {
   width: 20px;
   position: absolute;

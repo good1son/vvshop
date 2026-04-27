@@ -20,7 +20,7 @@
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  row-gap: 50px;
+  row-gap: 30px;
 
   position: absolute;
   top: 0;
@@ -49,6 +49,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  filter: sepia(0.3) saturate(0.6) brightness(1.1) hue-rotate(-10deg);
 }
 
 .mobile-menu__list {
@@ -59,8 +60,17 @@
   row-gap: 30px;
 }
 
+.mobile-menu__link {
+  position: relative;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-light-beige);
+}
+
 .mobile-menu__link::before {
-  content: "✧✧✧";
+  content: "";
   position: absolute;
   bottom: 100%;
   left: 50%;
@@ -69,11 +79,6 @@
   opacity: 0.5;
 }
 
-.mobile-menu__link {
-  position: relative;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
-  color: var(--color-light-gold);
-  font-size: 18px;
+.mobile-menu__button {
+  background: var(--color-light-beige);
 }

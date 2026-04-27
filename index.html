@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>«Вне Времени»</title>
     <link rel="stylesheet" href="./styles/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Антикварный салон «Вне Времени»",
+        "url": "https://good1son.github.io/vvshop/",
+        "telephone": "+7 (926) 168-80-22",
+        "email": "shop@shopvv.ru",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Садовая-Черногрязская, д. 5/9",
+          "addressLocality": "Москва",
+          "postalCode": "107078",
+          "addressCountry": "RU"
+        },
+        "openingHours": "Mo-Su 10:30–19:30",
+        "sameAs": [
+          "https://vk.com/vvshop",
+          "https://t.me/79261688022",
+          "https://wa.me/79261688022"
+        ]
+      }
+    </script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -66,13 +89,7 @@
         <div class="mobile-menu">
           <div class="mobile-menu__content">
             <div class="mobile-menu__logo">
-              <img
-                class="logo-graving"
-                src="./img/logo/logo.png"
-                alt=""
-                width="100"
-                height="100"
-              />
+              <img src="./img/logo/logo.png" alt="" width="100" height="100" />
             </div>
             <nav class="mobile-menu__nav">
               <ul class="mobile-menu__list">
@@ -97,8 +114,45 @@
                   >
                 </li>
               </ul>
-              <hr />
             </nav>
+            <button class="mobile-menu__button button">Связаться с нами</button>
+            <div class="socials">
+              <ul class="socials__list">
+                <li class="socials__item">
+                  <a
+                    class="socials__link socials__link_mob"
+                    href="https://vk.com"
+                    aria-label="Вконтакте"
+                  >
+                    <svg class="socials__icon icon-vk">
+                      <use href="./img/sprite.svg#vk-icon"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a
+                    class="socials__link socials__link_mob"
+                    href="https://wa.me/79261688022"
+                    aria-label="WhatsApp"
+                  >
+                    <svg class="socials__icon icon-wa">
+                      <use href="./img/sprite.svg#wa-icon"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a
+                    class="socials__link socials__link_mob"
+                    href="https://t.me/79261688022"
+                    aria-label="Telegram"
+                  >
+                    <svg class="socials__icon icon-tg">
+                      <use href="./img/sprite.svg#tg-icon"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -162,7 +216,6 @@
                           src="./img/slide-1.jpg"
                           width="300"
                           alt=""
-                          class="card__image"
                         />
                       </div>
                       <div class="card__info">
@@ -180,7 +233,6 @@
                           src="./img/slide-2.jpeg"
                           width="300"
                           alt=""
-                          class="card__image"
                         />
                       </div>
                       <div class="card__info">
@@ -198,7 +250,6 @@
                           src="./img/slide-3.jpeg"
                           width="300"
                           alt=""
-                          class="card__image"
                         />
                       </div>
                       <div class="card__info">
@@ -216,7 +267,6 @@
                           src="./img/slide-4.jpg"
                           width="300"
                           alt=""
-                          class="card__image"
                         />
                       </div>
                       <div class="card__info">
@@ -232,7 +282,6 @@
                           src="./img/slide-5.jpg"
                           width="300"
                           alt=""
-                          class="card__image"
                         />
                       </div>
                       <div class="card__info">
@@ -250,7 +299,6 @@
                           src="./img/slide-6.jpeg"
                           width="300"
                           alt=""
-                          class="card__image"
                         />
                       </div>
                       <div class="card__info">
@@ -268,7 +316,6 @@
                           src="./img/slide-7.jpg"
                           width="300"
                           alt=""
-                          class="card__image"
                         />
                       </div>
                       <div class="card__info">
@@ -286,7 +333,6 @@
                           src="./img/slide-1.jpg"
                           width="300"
                           alt=""
-                          class="card__image"
                         />
                       </div>
                       <div class="card__info">
@@ -357,7 +403,7 @@
       </section>
       <section id="contact" class="contact-us">
         <div class="contact-us__content container">
-          <form action="" class="contact-us__form form">
+          <form action="?" method="post" class="contact-us__form form">
             <h2 class="form__title title">
               Отправьте заявку<br />
               мы свяжемся с Вами!
@@ -400,10 +446,8 @@
       <div class="footer__content">
         <div class="footer__map">
           <iframe
-            src="https://yandex.ru/map-widget/v1/?ll=37.653012,55.766645&z=15.5&pt=37.653269,55.766488,pmrdl~63~Антикварный салон «Вне Времени»"
-            width="100%"
-            height="100%"
-            frameborder="0"
+            src="https://yandex.ru/map-widget/v1/?ll=37.653012,55.766645&z=15.5&pt=37.653269,55.766488,pmrdl~63"
+            style="width: 100%; height: 100%"
             allowfullscreen
           >
           </iframe>
@@ -426,20 +470,9 @@
             </li>
           </ul>
         </nav>
-        <address
-          class="footer__contacts"
-          itemscope
-          itemtype="https://schema.org/Organization"
-        >
-          <span class="visually-hidden" itemprop="name"
-            >Антикварный салон «Вне Времени»</span
-          >
+        <address class="footer__contacts">
           <div class="contacts__item">
-            <a
-              class="contacts__link link"
-              href="tel:+79261688022"
-              itemprop="telephone"
-            >
+            <a class="contacts__link link" href="tel:+79261688022">
               <svg
                 class="contacts__icon icon-tel"
                 width="24"
@@ -452,11 +485,7 @@
             >
           </div>
           <div class="contacts__item">
-            <a
-              class="contacts__link link"
-              href="mailto:shop@shopvv.ru"
-              itemprop="email"
-            >
+            <a class="contacts__link link" href="mailto:shop@shopvv.ru">
               <svg
                 class="contacts__icon icon-mail_old"
                 width="24"
@@ -476,29 +505,11 @@
               shop@shopvv.ru</a
             >
           </div>
-          <div
-            class="contacts__item"
-            itemprop="address"
-            itemscope
-            itemtype="https://schema.org/PostalAddress"
-          >
-            <span itemprop="addressLocality">Москва,</span>
-            <span itemprop="streetAddress"
-              >ул. Садовая-Черногрязская, д. 5/9</span
-            >
+          <div class="contacts__item">
+            <span>Москва,</span>
+            <span>ул. Садовая-Черногрязская, д. 5/9</span>
           </div>
-          <div
-            class="contacts__item"
-            itemprop="openingHoursSpecification"
-            itemscope
-            itemtype="https://schema.org/OpeningHoursSpecification"
-          >
-            <meta
-              itemprop="dayOfWeek"
-              content="Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday"
-            />
-            <meta itemprop="opens" content="10:30" />
-            <meta itemprop="closes" content="19:30" />
+          <div class="contacts__item">
             <span class="work-hours-text">
               <svg
                 class="contacts__icon icon-clock"
@@ -550,21 +561,33 @@
           <div class="socials">
             <ul class="socials__list">
               <li class="socials__item">
-                <a href="" class="socials__link" aria-label="Вконтакте">
+                <a
+                  class="socials__link"
+                  href="https://vk.com"
+                  aria-label="Вконтакте"
+                >
                   <svg class="socials__icon icon-vk">
                     <use href="./img/sprite.svg#vk-icon"></use>
                   </svg>
                 </a>
               </li>
               <li class="socials__item">
-                <a href="" class="socials__link" aria-label="WhatsApp">
+                <a
+                  class="socials__link"
+                  href="https://wa.me/79261688022"
+                  aria-label="WhatsApp"
+                >
                   <svg class="socials__icon icon-wa">
                     <use href="./img/sprite.svg#wa-icon"></use>
                   </svg>
                 </a>
               </li>
               <li class="socials__item">
-                <a href="" class="socials__link" aria-label="Telegram">
+                <a
+                  class="socials__link"
+                  href="https://t.me/79261688022"
+                  aria-label="Telegram"
+                >
                   <svg class="socials__icon icon-tg">
                     <use href="./img/sprite.svg#tg-icon"></use>
                   </svg>

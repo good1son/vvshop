@@ -188,3 +188,8 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}

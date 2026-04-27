@@ -259,6 +259,10 @@
     transform var(--transition-duration) ease-in;
 }
 
+.socials__link_mob {
+  background: transparent;
+}
+
 .socials__icon {
   width: 60%;
   height: 60%;
