@@ -1,0 +1,9 @@
+export { default as TelIcon } from './tel-icon.svg';
+export { default as MailIcon } from './mail-icon.svg';
+export { default as VKIcon } from './vk-icon.svg';
+export { default as WaIcon } from './wa-icon.svg';
+export { default as TgIcon } from './tg-icon.svg';
+export { default as FilterIcon } from './filter-icon.svg';
+export { default as CloseIcon } from './close-icon.svg';
+export { default as GraphDecrease } from './graph-decrease.svg';
+export { default as GraphIncrease } from './graph-increase.svg';

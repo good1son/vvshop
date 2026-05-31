@@ -1,0 +1,85 @@
+@use '@/styles/variables' as *;
+
+.sortFilter {
+  width: 100%;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.sortButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  color: $color-card-text;
+  transition: color $transition-duration ease;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  span {
+    position: relative;
+    font-family: $card-font-2;
+    font-size: clamp(14px, 2vw, 18px);
+    color: inherit;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background: $color-light-gold;
+      transform: translateX(-50%);
+
+      transition: all $transition-duration ease;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-light-gold;
+
+      span::after {
+        width: 100%;
+        left: 0;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &:focus {
+    outline: none;
+    color: $color-light-gold;
+
+    span::after {
+      width: 100%;
+      left: 0;
+      transform: translateX(0);
+    }
+  }
+
+  &.active {
+    color: $color-dark-gold;
+
+    span::after {
+      width: 100%;
+      left: 0;
+      transform: translateX(0);
+      background: $color-dark-gold;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use '@/styles/variables' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba($color-deep-indigo, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: $layer-modal;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  @media (min-width: 901px) {
+    display: none;
+  }
+}
+
+.container {
+  width: calc(100% - 40px);
+  margin-bottom: 20px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 16px;
+  background: $color-card;
+  animation: slideUp $transition-duration ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

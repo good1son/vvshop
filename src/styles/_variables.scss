@@ -1,0 +1,81 @@
+$color-white: #ffffff;
+$color-black: #000000;
+$color-deep-indigo: #282b3f;
+$color-text: #ebebdc;
+
+$color-black-rgb: 0, 0, 0;
+$color-white-rgb: 255, 255, 255;
+$color-deep-indigo-rgb: 40, 43, 63;
+$color-darkest-gold-rgb: 212, 175, 55;
+
+$color-dark-1: #1e1e1e;
+$color-dark-2: #2c2c2c;
+
+$color-gray-1: #f5f5f5;
+$color-gray-2: #d9d9d9;
+$color-gray-3: #b3b3b3;
+$color-gray-4: #757575;
+
+$color-gold: #b8860b;
+$color-light-gold: #d4af37;
+$color-dark-gold: #8b6914;
+$color-darkest-gold: #d4af37;
+
+$color-card: #f4ecd8;
+$color-card-text: #9c7c4a;
+$color-title-header: #ecd9a1;
+$color-light-beige: #e0d6b5;
+$color-link-hover: #e8d88e;
+
+$color-error: #ff4444;
+$color-error-focus: #ff6666;
+
+$color-stripe: linear-gradient(
+  90deg,
+  transparent 0%,
+  $color-gold,
+  transparent 100%
+);
+
+$color-order-form: #412e17;
+
+$border: 1px solid $color-gray-2;
+$border-radius: 8px;
+
+$box-shadow:
+  0 4px 4px -4px rgba(12, 12, 13, 0.05),
+  0 16px 32px -4px rgba(12, 12, 13, 0.1);
+
+$input-height: 40px;
+
+$transition-duration: 0.3s;
+
+$first-font: 'Bona Nova', serif;
+$header-font: 'Oswald', sans-serif;
+$second-font: 'Inter', sans-serif;
+$card-font-1: 'Marck Script', cursive;
+$card-font-2: 'Caveat', cursive;
+$georgia-font: 'Georgia', serif;
+
+$normal-weight: 400;
+$semi-bold-weight: 600;
+$bold-weight: 700;
+
+$layer-bg: 100;
+$layer-overlay: 150;
+$layer-content: 200;
+$layer-mobile-menu: 250;
+$layer-header: 275;
+$layer-mobile-burger: 299;
+$layer-modal: 500;
+$layer-loader: 999;
+
+$not-visible: -1;
+$slider-not-active: 1;
+$slider-active: 2;
+
+$spacing-xs: 0.5rem;
+$spacing-sm: 0.75rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;

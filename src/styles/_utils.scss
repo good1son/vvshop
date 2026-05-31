@@ -1,0 +1,51 @@
+@use './variables' as *;
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1480px;
+  padding: 0 40px;
+  margin-inline: auto;
+
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
+}
+
+.title {
+  font-weight: $normal-weight;
+  font-size: clamp(26px, 5vw, 72px);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: clamp(14px, 1vw, 16px);
+  max-width: clamp(280px, 50vw, 650px);
+}
+
+.link {
+  color: $color-light-beige;
+  transition: all $transition-duration;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@use '@/styles/variables' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 20px;
+
+  @media (max-width: 600px) {
+    gap: 0.75rem;
+  }
+}
+
+.title {
+  font-size: clamp(26px, 3vw, 60px);
+  text-align: center;
+  margin-bottom: 2rem;
+  @media (max-width: 600px) {
+    margin-bottom: 1rem;
+  }
+}
+
+.titleOrder {
+  font-family: $card-font-2;
+  color: $color-order-form;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.fieldWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.error {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  right: 0;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  color: $color-error;
+  text-align: center;
+}
+
+.errorOrder {
+  font-family: $card-font-2;
+  color: $color-order-form;
+  font-size: clamp(1rem, 1.2vw, 1.3rem);
+}

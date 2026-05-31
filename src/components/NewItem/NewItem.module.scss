@@ -1,0 +1,103 @@
+@use '@/styles/variables' as *;
+
+.newItem {
+  position: relative;
+  background:
+    linear-gradient(rgba(var(--color-deep-indigo-rgb), 0.25)),
+    linear-gradient(
+      rgba($color-black, 0.5) 0%,
+      rgba($color-deep-indigo, 0.7) 0%,
+      rgba($color-black, 0) 25%,
+      rgba($color-black, 0) 45%,
+      rgba($color-deep-indigo, 0.4) 75%,
+      rgba($color-deep-indigo, 1) 100%
+    );
+  z-index: var(--layer-content);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+}
+
+.itemTop {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  align-items: center;
+  column-gap: clamp(10px, 4vw, 50px);
+
+  @media (max-width: 1024px) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+
+      width: 100%;
+      height: 100%;
+      background-image: url('@/assets/images/camera-s.png');
+      background-size: fill;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.2;
+    }
+  }
+}
+
+.title {
+  font-size: clamp(26px, 3vw, 60px);
+  text-align: start;
+
+  @media (max-width: 1024px) {
+    font-size: clamp(26px, 4vw, 60px);
+    text-align: center;
+  }
+}
+
+.description {
+  text-align: center;
+}
+
+.decor {
+  display: flex;
+  justify-content: end;
+  opacity: 0.25;
+  margin-bottom: -50px;
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.sliderWrapper {
+  width: 100%;
+  max-width: 100%;
+
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+
+  :global {
+    .swiper-pagination-bullet {
+      background: $color-light-beige;
+      &-active {
+        background: $color-dark-gold;
+      }
+    }
+    .swiper-pagination {
+      position: relative;
+      margin-top: 20px;
+    }
+  }
+}

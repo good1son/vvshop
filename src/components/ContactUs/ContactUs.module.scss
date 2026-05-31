@@ -1,0 +1,56 @@
+@use '@/styles/variables' as *;
+
+.contactUs {
+  position: relative;
+  background-image: url('@/assets/images/bg/bg-paralax.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+      rgba($color-deep-indigo, 1) 0%,
+      rgba($color-deep-indigo, 0.85) 5%,
+      rgba($color-deep-indigo, 0.5) 12%,
+      rgba($color-deep-indigo, 0.2) 20%,
+      rgba($color-deep-indigo, 0) 30%,
+      rgba($color-deep-indigo, 0.15) 70%,
+      rgba($color-deep-indigo, 0.6) 85%,
+      rgba($color-deep-indigo, 1) 100%
+    );
+    z-index: $layer-bg;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba($color-deep-indigo, 0.5);
+    z-index: $layer-bg;
+  }
+
+  & > * {
+    position: relative;
+    z-index: $layer-content;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 100svh;
+    background-position: left;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}

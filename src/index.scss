@@ -1,0 +1,43 @@
+@use './styles//variables' as *;
+@use './styles/normalize.scss';
+@use './styles/fonts';
+@use './styles/utils';
+
+body {
+  color: $color-text;
+  background-color: $color-deep-indigo;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: $first-font;
+  color: $color-white;
+}
+
+h2 {
+  font-size: clamp(20px, 5vw, 36px);
+}
+
+p,
+li {
+  font-family: $second-font;
+  font-weight: $normal-weight;
+}

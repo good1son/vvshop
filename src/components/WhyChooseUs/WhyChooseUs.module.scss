@@ -1,0 +1,131 @@
+@use '@/styles/variables' as *;
+
+.whyChooseUs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  row-gap: 20px;
+  padding: 40px;
+
+  @media (max-width: 850px) {
+    position: relative;
+    align-items: center;
+    padding: 20px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: '';
+      background-image: url('@/assets/images/clock-decor.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.1;
+    }
+  }
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(10px, 2.7vw, 50px);
+
+  @media (max-width: 850px) {
+    justify-content: center;
+  }
+}
+
+.img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  flex-shrink: 1;
+
+  @media (max-width: 850px) {
+    display: none;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  text-align: start;
+  row-gap: clamp(20px, 1.5vw, 40px);
+
+  @media (max-width: 850px) {
+    position: relative;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.title {
+  font-size: clamp(26px, 4vw, 60px);
+  text-align: end;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.description {
+  max-width: 100%;
+
+  @media (max-width: 850px) {
+    max-width: clamp(280px, 50vw, 650px);
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+
+  @media (max-width: 850px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 15px;
+  max-width: clamp(280px, 20vw, 650px);
+
+  @media (max-width: 850px) {
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+
+  @media (max-width: 850px) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.cardTitle {
+  font-size: clamp(24px, 1.3vw, 36px);
+  font-weight: normal;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@media (max-width: 850px) {
+  .title,
+  .cardTitle,
+  .cardDescription {
+    text-align: center;
+    white-space: wrap;
+  }
+}

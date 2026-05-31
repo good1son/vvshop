@@ -1,0 +1,110 @@
+@use '../../styles/variables' as *;
+
+@mixin burger-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  transition: all $transition-duration ease;
+}
+
+@mixin gold-bg {
+  background: $color-light-gold;
+}
+
+@mixin beige-bg {
+  background: $color-light-beige;
+}
+
+.burger {
+  display: none;
+  position: relative;
+  width: 30px;
+  aspect-ratio: 1;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid $color-light-gold;
+  border-radius: 4px;
+  z-index: $layer-mobile-burger;
+  transition: border-color $transition-duration ease;
+
+  span {
+    @include burger-line;
+    @include gold-bg;
+
+    &:first-child {
+      top: 7px;
+    }
+
+    &:nth-child(2) {
+      top: 13px;
+    }
+
+    &:last-child {
+      top: 19px;
+    }
+  }
+
+  &.isActive {
+    border-color: $color-light-beige;
+
+    span {
+      @include beige-bg;
+    }
+
+    span:first-child,
+    span:last-child {
+      top: 13px;
+      transition:
+        top $transition-duration ease,
+        transform $transition-duration ease $transition-duration;
+    }
+
+    span:first-child {
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-50%) scale(0);
+    }
+
+    span:last-child {
+      transform: translateX(-50%) rotate(-45deg);
+    }
+  }
+
+  &:not(.isActive) {
+    span:first-child,
+    span:last-child {
+      transition:
+        transform $transition-duration ease,
+        top $transition-duration ease $transition-duration;
+    }
+
+    span:first-child {
+      transform: translateX(-50%);
+      top: 7px;
+    }
+
+    span:last-child {
+      transform: translateX(-50%);
+      top: 19px;
+    }
+
+    span:nth-child(2) {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+      transition:
+        opacity $transition-duration ease $transition-duration,
+        transform $transition-duration ease $transition-duration;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    display: flex;
+    order: 3;
+  }
+}

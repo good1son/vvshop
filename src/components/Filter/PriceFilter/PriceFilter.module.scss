@@ -1,0 +1,80 @@
+@use '@/styles/variables' as *;
+
+.priceFilter {
+  // padding: clamp(8px, 2vw, 16px);
+  background: $color-card;
+  border-radius: 12px;
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 1.5vw, 12px);
+  // margin-bottom: clamp(6px, 1.5vw, 12px);
+
+  input {
+    width: clamp(80px, 8vw, 100px);
+    padding: 6px 8px;
+    border: 1px solid $color-light-beige;
+    background: inherit;
+    border-radius: 4px;
+    font-family: $card-font-1;
+    color: $color-card-text;
+    font-size: clamp(14px, 2vw, 18px);
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: $color-light-gold;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-light-gold;
+    }
+  }
+
+  span {
+    color: $color-light-beige;
+  }
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: clamp(14px, 2vw, 18px);
+  color: $color-card-text;
+  font-family: $card-font-1;
+
+  span {
+    font-family: $card-font-2;
+  }
+
+  @media (max-width: 900px) {
+    margin-bottom: 4px;
+  }
+}
+
+.track {
+  background: $color-light-beige;
+}
+
+.range {
+  background: $color-card-text;
+}
+
+.thumb {
+  background: $color-card-text;
+  border: none;
+
+  &:focus-visible {
+    outline: 2px solid $color-light-gold;
+    outline-offset: 1px;
+    box-shadow: none;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}

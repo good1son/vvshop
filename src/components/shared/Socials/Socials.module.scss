@@ -1,0 +1,54 @@
+@use '@/styles/variables' as *;
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+
+  @media (max-width: 1280px) {
+    justify-content: center;
+  }
+}
+
+.link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: rgba($color-darkest-gold, 0.15);
+  border-radius: 50%;
+  transition:
+    background-color $transition-duration ease,
+    transform $transition-duration ease-in;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $color-light-beige;
+      transform: translateY(-2px);
+    }
+
+    &:hover .icon {
+      color: #413a2f;
+    }
+  }
+}
+
+.mobile {
+  .link {
+    background: transparent;
+  }
+}
+
+.icon {
+  width: 60%;
+  height: 60%;
+  display: block;
+  color: $color-light-beige;
+}

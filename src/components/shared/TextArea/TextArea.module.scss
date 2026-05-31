@@ -1,0 +1,12 @@
+@use '@/styles/variables' as *;
+@use '@/styles/form-field' as *;
+
+.default {
+  @include form-field;
+  resize: none;
+}
+
+.order {
+  @include form-field-order;
+  resize: none;
+}

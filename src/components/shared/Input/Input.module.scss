@@ -1,0 +1,10 @@
+@use '@/styles/variables' as *;
+@use '@/styles/form-field' as *;
+
+.default {
+  @include form-field;
+}
+
+.order {
+  @include form-field-order;
+}

@@ -1,0 +1,108 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.footer {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        rgba($color-deep-indigo, 1) 0%,
+        rgba($color-deep-indigo, 0.85) 5%,
+        rgba($color-deep-indigo, 0.5) 12%,
+        rgba($color-deep-indigo, 0.2) 20%,
+        rgba($color-deep-indigo, 0) 30%,
+        rgba($color-deep-indigo, 0.15) 70%,
+        rgba($color-deep-indigo, 0.6) 85%,
+        rgba($color-deep-indigo, 1) 100%
+      ),
+      url('@/assets/images/bg/bg-footer.jpg');
+    background-position: center;
+    background-size: cover;
+    opacity: 0.25;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.25fr 0.5fr 1.25fr;
+  gap: 40px;
+  padding: clamp(20px, 3vw, 40px);
+  align-items: stretch;
+  justify-content: space-between;
+  max-width: 100%;
+  position: relative;
+
+  @media (max-width: 1280px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
+}
+
+.stripeTop {
+  @include stripe;
+  top: 0;
+}
+
+.stripeBottom {
+  @include stripe;
+  bottom: 0px;
+}
+
+.scrollTop {
+  position: relative;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  aspect-ratio: 1;
+  padding: 10px;
+  border-radius: 50%;
+  color: $color-gold;
+  background: $color-deep-indigo;
+  border: 1px solid $color-gold;
+  transition: all $transition-duration ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    border-top: 2px solid currentColor;
+    border-left: 2px solid currentColor;
+    transform: translate(-50%, -25%) rotate(45deg);
+  }
+
+  &:active {
+    color: $color-deep-indigo;
+    background: $color-gold;
+    transform: translateX(-50%) scale(0.95);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-deep-indigo;
+      background: $color-gold;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    bottom: 18px;
+    width: 36px;
+    aspect-ratio: 1;
+
+    &::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

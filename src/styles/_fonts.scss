@@ -1,0 +1,97 @@
+@use './variables' as *;
+
+@font-face {
+  font-family: 'Bona Nova';
+  src: url('../assets/fonts/BonaNova-Regular.woff2') format('woff2');
+  font-weight: $normal-weight;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bona Nova';
+  src: url('../assets/fonts/BonaNova-Italic.woff2') format('woff2');
+  font-weight: $normal-weight;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bona Nova';
+  src: url('../assets/fonts/BonaNova-Bold.woff2') format('woff2');
+  font-weight: $bold-weight;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('../assets/fonts/Oswald-Regular.woff2') format('woff2');
+  font-weight: $normal-weight;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('../assets/fonts/Oswald-SemiBold.woff2') format('woff2');
+  font-weight: $semi-bold-weight;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('../assets/fonts/Oswald-Bold.woff2') format('woff2');
+  font-weight: $bold-weight;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter24pt-Regular.woff2') format('woff2');
+  font-weight: $normal-weight;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter24pt-Bold.woff2') format('woff2');
+  font-weight: $bold-weight;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Marck Script';
+  src: url('../assets/fonts/MarckScript-Regular.woff2') format('woff2');
+  font-weight: $normal-weight;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Caveat';
+  src: url('../assets/fonts/Caveat-Regular.woff2') format('woff2');
+  font-weight: $normal-weight;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Georgia';
+  src: url('../assets/fonts/Georgia.woff2') format('woff2');
+  font-weight: $normal-weight;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Georgia';
+  src: url('../assets/fonts/Georgia-Italic.woff2') format('woff2');
+  font-weight: $normal-weight;
+  font-style: italic;
+  font-display: swap;
+}

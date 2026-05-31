@@ -1,0 +1,61 @@
+@use '@/styles/variables' as *;
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-family: $card-font-2;
+  font-size: 0.9rem;
+  color: $color-card-text;
+  transition: color $transition-duration ease;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-light-gold;
+    }
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+.checkmark {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: transparent;
+  border: 2px solid $color-card-text;
+  border-radius: 3px;
+  position: relative;
+}
+
+.checkboxLabel:hover .checkmark {
+  border-color: $color-light-gold;
+}
+
+.checkboxLabel input:checked ~ .checkmark {
+  background: $color-dark-gold;
+  border-color: $color-dark-gold;
+}
+
+.checkboxLabel input:checked ~ .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid $color-light-beige;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkboxLabel input:focus-visible ~ .checkmark {
+  outline: 2px solid $color-light-gold;
+  outline-offset: 2px;
+}

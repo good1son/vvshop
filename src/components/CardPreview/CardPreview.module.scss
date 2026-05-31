@@ -1,0 +1,36 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.card {
+  width: 100%;
+  background: $color-card;
+  border-radius: 4px;
+  padding: 10px 10px 16px;
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform $transition-duration ease;
+  cursor: pointer;
+}
+
+.imageWrapper {
+  @include card-image-wrapper;
+}
+
+.info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 0 4px;
+  letter-spacing: 0.5px;
+  background: #f4ecd8;
+  font-family: $card-font-1;
+  font-size: 1rem;
+  color: $color-card-text;
+}
+
+.country::after {
+  content: ', ';
+  font-family: inherit;
+  font-size: 1.5rem;
+}

@@ -1,0 +1,102 @@
+@use '@/styles/variables' as *;
+
+@mixin form-field {
+  width: 100%;
+  border-radius: 32px;
+  padding: 1.5rem;
+  background: rgba($color-deep-indigo, 0.5);
+  border: 1px solid $color-dark-gold;
+  color: $color-light-gold;
+  transition: all $transition-duration ease;
+
+  &::placeholder {
+    font-family: inherit;
+    font-size: 1rem;
+    color: $color-light-gold;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-light-gold;
+  }
+
+  &.inputError {
+    border-color: $color-error;
+  }
+
+  &.inputError:focus {
+    border-color: $color-error-focus;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    transition: background-color 999999s ease-in-out 0s !important;
+    -webkit-text-fill-color: $color-light-gold;
+  }
+
+  @media (max-width: 600px) {
+    & {
+      padding: 1rem;
+    }
+
+    &::placeholder {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@mixin form-field-order {
+  width: 100%;
+  border-radius: 16px;
+  padding: 1.5rem;
+  font-family: $card-font-2;
+  font-size: clamp(1rem, 3vw, 2rem);
+  background: transparent;
+  color: $color-order-form;
+  border: none;
+  border-top: 1px solid $color-order-form;
+  border-bottom: 1px solid $color-order-form;
+  transition: all $transition-duration ease;
+
+  &::placeholder {
+    font-family: inherit;
+    font-size: 2rem;
+    color: inherit;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-light-gold;
+  }
+
+  &.inputError {
+    border-color: $color-error;
+  }
+
+  &.inputError:focus {
+    border-color: $color-error-focus;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    transition: background-color 999999s ease-in-out 0s !important;
+    -webkit-text-fill-color: $color-order-form;
+    &::first-line {
+      font-family: $card-font-2;
+    }
+  }
+
+  @media (max-width: 600px) {
+    & {
+      padding: 1rem;
+    }
+
+    &::placeholder {
+      font-size: 0.9rem;
+    }
+  }
+}

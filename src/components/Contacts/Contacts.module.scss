@@ -1,0 +1,192 @@
+@use '@/styles/variables' as *;
+
+.contacts {
+  width: 100%;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+
+  font-family: $georgia-font;
+  font-style: italic;
+  color: $color-light-beige;
+  line-height: 1.4;
+
+  background: rgba(20, 20, 20, 0.3);
+  backdrop-filter: blur(2px);
+  padding: 20px 25px;
+  border: 1px solid $color-dark-gold;
+  border-radius: 24px;
+  transition: border-color $transition-duration;
+
+  &:hover {
+    border-color: $color-light-gold;
+  }
+
+  @media (max-width: 1280px) {
+    order: 1;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    & .item:nth-child(4) {
+      font-size: clamp(0.75rem, 2vw, 1rem);
+    }
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  letter-spacing: 2.5px;
+
+  svg {
+    vertical-align: middle;
+    filter: drop-shadow(0 0 2px rgba(201, 160, 61, 0.4));
+  }
+
+  &:has(span[itemprop='streetAddress']) {
+    flex-wrap: wrap;
+  }
+
+  &:hover .clockHour {
+    animation: rotateHour 3s ease-in-out forwards;
+    transform-origin: 12px 12px;
+  }
+
+  &:hover .clockMinute {
+    animation: rotateMinute 3s ease-in-out forwards;
+    transform-origin: 12px 12px;
+  }
+
+  @media (max-width: 1280px) {
+    justify-content: center;
+    letter-spacing: 2px;
+  }
+
+  @media (max-width: 768px) {
+    letter-spacing: 1.5px;
+  }
+}
+
+.itemStreet {
+  font-size: clamp(12px, 3.5vw, 16px);
+  flex-wrap: wrap;
+}
+
+.icon {
+  transition:
+    transform $transition-duration ease,
+    color $transition-duration ease;
+}
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all $transition-duration;
+  border-bottom: 1px dashed transparent;
+
+  &:hover .iconTel {
+    animation: shake 0.5s ease-in-out 2;
+  }
+
+  &:hover .iconMailOld {
+    animation: flyOut 0.5s ease forwards;
+  }
+
+  &:hover .iconMailNew {
+    animation: flyIn 0.5s ease 0.15s forwards;
+  }
+}
+
+.iconTel,
+.iconMailOld,
+.iconMailNew {
+  width: 24px;
+  height: 24px;
+}
+
+.iconMailNew {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transform: translateX(-20px) scale(0.8);
+}
+
+.iconMailOld {
+  transition: none;
+}
+
+.iconClock {
+  width: 32px;
+  height: 32px;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0deg) translateX(0);
+  }
+  25% {
+    transform: rotate(8deg) translateX(2px);
+  }
+  75% {
+    transform: rotate(-8deg) translateX(-2px);
+  }
+}
+
+@keyframes flyOut {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(60px) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flyIn {
+  0% {
+    transform: translateX(-20px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateHour {
+  from {
+    transform: rotate(-60deg);
+  }
+  to {
+    transform: rotate(225deg);
+  }
+}
+
+@keyframes rotateMinute {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+
+.workHoursText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: rgba($color-darkest-gold, 0.15);
+  padding: 6px 14px;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  border-left: 2px solid #c9a03d;
+}
