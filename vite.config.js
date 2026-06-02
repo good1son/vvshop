@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import magicalSvg from 'vite-plugin-magical-svg';
+import svgr from 'vite-plugin-svgr';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,11 +12,12 @@ export default defineConfig({
   base: '/vvshop/',
   plugins: [
     react(),
-    magicalSvg({
-      target: 'react',
-      preserveWidthHeight: true,
-      setFillStrokeColor: true,
-      restoreMissingViewBox: true,
+    svgr({
+      svgrOptions: {
+        exportType: 'named',
+        namedExport: 'ReactComponent',
+      },
+      include: '**/*.svg',
     }),
   ],
 

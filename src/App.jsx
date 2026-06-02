@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
-import Catalog from './components/Catalog/Catalog';
+import Catalog from './pages/Catalog/Catalog';
+import CardDetail from './pages/CardDetail/CardDetail';
 import './App.css';
 
 function App() {
@@ -15,6 +16,10 @@ function App() {
         <Route
           path='/catalog'
           element={<Catalog />}
+        />
+        <Route
+          path='/catalog/:id'
+          element={<CardDetail />}
         />
       </Routes>
       <Footer />

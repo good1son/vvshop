@@ -94,6 +94,9 @@
   font-family: $card-font-2;
   font-weight: $normal-weight;
   color: $color-card-text;
+  font-size: 1.4rem;
+  line-height: 1.25;
+
   text-align: center;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -103,7 +106,8 @@
   word-break: break-word;
 
   @media (max-width: 576px) {
-    font-size: 0.75rem;
+    font-size: 1.2rem;
+    line-height: 1;
   }
 }
 
@@ -133,10 +137,12 @@
 .price {
   position: relative;
   font-family: $card-font-2;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-align: start;
   color: $color-card-text;
+
   @media (max-width: 576px) {
-    font-size: 0.75rem;
+    font-size: 1rem;
+    line-height: 1;
   }
 }

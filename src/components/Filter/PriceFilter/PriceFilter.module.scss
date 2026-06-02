@@ -20,7 +20,7 @@
     border-radius: 4px;
     font-family: $card-font-1;
     color: $color-card-text;
-    font-size: clamp(14px, 2vw, 18px);
+    font-size: clamp(16px, 2vw, 18px);
 
     @media (hover: hover) {
       &:hover {
@@ -43,7 +43,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 12px;
-  font-size: clamp(14px, 2vw, 18px);
+  font-size: clamp(16px, 2vw, 18px);
   color: $color-card-text;
   font-family: $card-font-1;
 

@@ -24,6 +24,7 @@ const Card = ({ item, onClick, onOrder }) => {
 
   const handleImageClick = useCallback(
     (e) => {
+      e.stopPropagation();
       if (isSwiping) {
         e.stopPropagation();
         resetSwipingFlag();

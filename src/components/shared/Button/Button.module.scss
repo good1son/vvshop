@@ -91,11 +91,15 @@
   position: relative;
   border: none;
   font-family: $card-font-2;
+  font-size: 1.25rem;
   color: $color-card-text;
   background: transparent;
   padding: 0;
   transition: transform $transition-duration ease;
 
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
   @media (hover: hover) {
     &:hover {
       transform: scale(1.05);

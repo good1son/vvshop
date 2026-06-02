@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const useCatalog = () => {
   const [selectedItem, setselectedItem] = useState(null);
+  const navigate = useNavigate();
 
   const handleOrder = useCallback((data) => {
     setselectedItem({ id: String(data.id), title: data.title });
   }, []);
 
   const handleCardClick = useCallback((id) => {
-    //navigate )'/item/${id}'
-    console.log('Click on item id: ', id);
+    navigate(`/catalog/${id}`);
   }, []);
 
   const closeModal = useCallback(() => {

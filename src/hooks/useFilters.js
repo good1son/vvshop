@@ -1,17 +1,9 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useMemo, useCallback } from 'react';
 import useSearch from './useSearch';
+import useQueryParams from './useQueryParams';
 
 const useFilters = (items) => {
-  const [filters, setFilters] = useState({
-    category: '',
-    group: '',
-    subcategory: '',
-    hasMark: false,
-    minPrice: '',
-    maxPrice: '',
-    sortOrder: '',
-  });
-
+  const { params, setParams, clearParams } = useQueryParams();
   const { searchQuery, setSearchQuery, searchResults } =
     useSearch(items);
 
@@ -33,13 +25,13 @@ const useFilters = (items) => {
         items
           .filter(
             (item) =>
-              !filters.category || item.category === filters.category
+              !params.category || item.category === params.category
           )
           .map((item) => item.group)
           .filter(Boolean)
       ),
     ],
-    [items, filters.category]
+    [items, params.category]
   );
 
   const subcategories = useMemo(
@@ -48,15 +40,15 @@ const useFilters = (items) => {
         items
           .filter(
             (item) =>
-              (!filters.category ||
-                item.category === filters.category) &&
-              (!filters.group || item.group === filters.group)
+              (!params.category ||
+                item.category === params.category) &&
+              (!params.group || item.group === params.group)
           )
           .map((item) => item.subcategory)
           .filter(Boolean)
       ),
     ],
-    [items, filters.category, filters.group]
+    [items, params.category, params.group]
   );
 
   const priceBounds = useMemo(() => {
@@ -77,33 +69,32 @@ const useFilters = (items) => {
   const filteredByCategory = useMemo(
     () =>
       items.filter((item) => {
-        if (filters.category && item.category !== filters.category)
+        if (params.category && item.category !== params.category)
           return false;
-        if (filters.group && item.group !== filters.group)
-          return false;
+        if (params.group && item.group !== params.group) return false;
         if (
-          filters.subcategory &&
-          item.subcategory !== filters.subcategory
+          params.subcategory &&
+          item.subcategory !== params.subcategory
         )
           return false;
-        if (filters.hasMark && !item.mark) return false;
+        if (params.hasMark && !item.mark) return false;
         return true;
       }),
     [
       items,
-      filters.category,
-      filters.group,
-      filters.subcategory,
-      filters.hasMark,
+      params.category,
+      params.group,
+      params.subcategory,
+      params.hasMark,
     ]
   );
 
   const filteredByPrice = useMemo(() => {
-    const min = filters.minPrice
-      ? Number(filters.minPrice)
+    const min = params.minPrice
+      ? Number(params.minPrice)
       : priceBounds.minPrice;
-    const max = filters.maxPrice
-      ? Number(filters.maxPrice)
+    const max = params.maxPrice
+      ? Number(params.maxPrice)
       : priceBounds.maxPrice;
     return filteredByCategory.filter((item) => {
       const price = Number(item.price);
@@ -112,24 +103,24 @@ const useFilters = (items) => {
     });
   }, [
     filteredByCategory,
-    filters.minPrice,
-    filters.maxPrice,
+    params.minPrice,
+    params.maxPrice,
     priceBounds,
   ]);
 
   const sortedItems = useMemo(() => {
-    if (!filters.sortOrder || filters.sortOrder === '') {
+    if (!params.sortOrder || params.sortOrder === '') {
       return filteredByPrice;
     }
     const result = [...filteredByPrice];
-    if (filters.sortOrder === 'price_asc') {
+    if (params.sortOrder === 'price_asc') {
       return result.sort((a, b) => Number(a.price) - Number(b.price));
     }
-    if (filters.sortOrder === 'price_desc') {
+    if (params.sortOrder === 'price_desc') {
       return result.sort((a, b) => Number(b.price) - Number(a.price));
     }
     return result;
-  }, [filteredByPrice, filters.sortOrder]);
+  }, [filteredByPrice, params.sortOrder]);
 
   const filteredItems = useMemo(() => {
     let result = sortedItems;
@@ -143,103 +134,112 @@ const useFilters = (items) => {
     return result;
   }, [sortedItems, searchQuery, searchResults]);
 
-  const handleCategoryChange = useCallback((category) => {
-    setFilters((prev) => ({
-      ...prev,
-      category: prev.category === category ? '' : category,
-      group: '',
-      subcategory: '',
-    }));
-  }, []);
+  const handleCategoryChange = useCallback(
+    (category) => {
+      const newCategory =
+        params.category === category ? '' : category;
+      setParams({
+        category: newCategory,
+        group: '',
+        subcategory: '',
+      });
+    },
+    [params.category, setParams]
+  );
 
-  const handleGroupChange = useCallback((group) => {
-    setFilters((prev) => ({
-      ...prev,
-      group: prev.group === group ? '' : group,
-      subcategory: '',
-    }));
-  }, []);
+  const handleGroupChange = useCallback(
+    (group) => {
+      const newGroup = params.group === group ? '' : group;
+      setParams({
+        group: newGroup,
+        subcategory: '',
+      });
+    },
+    [params.group, setParams]
+  );
 
-  const handleSubcategoryChange = useCallback((subcategory) => {
-    setFilters((prev) => ({
-      ...prev,
-      subcategory:
-        prev.subcategory === subcategory ? '' : subcategory,
-    }));
-  }, []);
+  const handleSubcategoryChange = useCallback(
+    (subcategory) => {
+      const newSubCategory =
+        params.subcategory === subcategory ? '' : subcategory;
+      setParams({
+        subcategory: newSubCategory,
+      });
+    },
+    [params.subcategory, setParams]
+  );
 
-  const handlePriceChange = useCallback((priceRange) => {
-    setFilters((prev) => ({
-      ...prev,
-      minPrice: priceRange.minPrice,
-      maxPrice: priceRange.maxPrice,
-    }));
-  }, []);
+  const handlePriceChange = useCallback(
+    (priceRange) => {
+      setParams({
+        minPrice: priceRange.minPrice,
+        maxPrice: priceRange.maxPrice,
+      });
+    },
+    [setParams]
+  );
 
-  const handleSortChange = useCallback((sortOrder) => {
-    setFilters((prev) => ({
-      ...prev,
-      sortOrder,
-    }));
-  }, []);
+  const handleSortChange = useCallback(
+    (sortOrder) => {
+      setParams({
+        sortOrder,
+      });
+    },
+    [setParams]
+  );
 
-  const handleCheckboxChange = useCallback((key, e) => {
-    setFilters((prev) => ({
-      ...prev,
-      [key]: e.target.checked,
-    }));
-  }, []);
+  const handleCheckboxChange = useCallback(
+    (key, e) => {
+      if (key === 'hasMark') {
+        setParams({ hasMark: e.target.checked });
+      }
+    },
+    [setParams]
+  );
 
   const resetFilters = useCallback(() => {
-    setFilters({
-      category: '',
-      group: '',
-      subcategory: '',
-      hasMark: false,
-      minPrice: '',
-      maxPrice: '',
-      sortOrder: '',
-    });
-    setSearchQuery('');
-  }, []);
+    clearParams();
+  }, [clearParams]);
 
   const handleRemoveFilters = useCallback(
     (key) => {
       const handlers = {
         category: () =>
-          setFilters((prev) => ({
-            ...prev,
+          setParams({
             category: '',
             group: '',
             subcategory: '',
-          })),
+          }),
         group: () =>
-          setFilters((prev) => ({
-            ...prev,
+          setParams({
             group: '',
             subcategory: '',
-          })),
-        subcategory: () =>
-          setFilters((prev) => ({ ...prev, subcategory: '' })),
-        hasMark: () =>
-          setFilters((prev) => ({ ...prev, hasMark: false })),
-        sortOrder: () =>
-          setFilters((prev) => ({ ...prev, sortOrder: '' })),
+          }),
+        subcategory: () => setParams({ subcategory: '' }),
+        hasMark: () => setParams({ hasMark: false }),
+        sortOrder: () => setParams({ sortOrder: '' }),
         price: () =>
-          setFilters((prev) => ({
-            ...prev,
+          setParams({
             minPrice: '',
             maxPrice: '',
-          })),
+          }),
         all: resetFilters,
       };
       handlers[key]?.();
     },
-    [resetFilters]
+    [setParams, resetFilters]
   );
 
   return {
-    filters,
+    filters: {
+      category: params.category,
+      group: params.group,
+      subcategory: params.subcategory,
+      hasMark: params.hasMark || false,
+      minPrice: params.minPrice,
+      maxPrice: params.maxPrice,
+      sortOrder: params.sortOrder,
+    },
     categories,
     groups,
     subcategories,
