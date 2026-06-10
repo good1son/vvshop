@@ -79,25 +79,3 @@
     display: none;
   }
 }
-
-.sliderWrapper {
-  width: 100%;
-  max-width: 100%;
-
-  position: relative;
-  overflow: hidden;
-  max-width: 1200px;
-
-  :global {
-    .swiper-pagination-bullet {
-      background: $color-light-beige;
-      &-active {
-        background: $color-dark-gold;
-      }
-    }
-    .swiper-pagination {
-      position: relative;
-      margin-top: 20px;
-    }
-  }
-}

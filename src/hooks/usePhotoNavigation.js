@@ -2,15 +2,21 @@ import { useState } from 'react';
 
 const usePhotoNavigation = (photos) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
+  const [prevPhotos, setPrevPhotos] = useState(photos);
+
+  if (photos !== prevPhotos) {
+    setPrevPhotos(photos);
+    setCurrentPhoto(0);
+  }
 
   const nextPhoto = () => {
+    if (!photos.length) return;
     setCurrentPhoto((prev) => (prev + 1) % photos.length);
   };
 
   const prevPhoto = () => {
-    setCurrentPhoto(
-      (prev) => (prev - 1 + photos.length) % photos.length
-    );
+    if (!photos.length) return;
+    setCurrentPhoto((prev) => (prev - 1 + photos.length) % photos.length);
   };
 
   const goToPhoto = (index) => {

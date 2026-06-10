@@ -2,24 +2,20 @@ import useCatalog from '@/hooks/useCatalog';
 import useFilters from '@/hooks/useFilters';
 import useModal from '@/hooks/useModal';
 import useStickyScroll from '@/hooks/useStickyScroll';
+import useOrderModal from '@/hooks/useOrderModal';
 import SearchInput from '@/components/shared/SearchInput/SearchInput';
 import Filter from '@/components/Filter/Filter';
 import MobileFilter from '@/components/Filter/MobileFilter/MobileFilter';
 import ActiveFilters from '@/components/Filter/ActiveFilters/ActiveFilters';
 import Card from '@/components/Card/Card';
 import OrderModal from '@/components/OrderModal/OrderModal';
-import { items } from '@/data';
-import styles from './Catalog.module.scss';
+import Loader from '@/components/shared/Loader/Loader';
 import { FilterIcon } from '@/assets/images/icons';
+import styles from './Catalog.module.scss';
 
 const Catalog = () => {
-  const {
-    selectedItem,
-    handleOrder,
-    handleCardClick,
-    closeModal,
-    isModalOpen,
-  } = useCatalog();
+  const { items, loading, error, handleCardClick } = useCatalog();
+  const { openModal } = useOrderModal();
 
   const {
     filters,
@@ -63,6 +59,18 @@ const Catalog = () => {
     onReset: resetFilters,
   };
 
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return <div>Ошибка: {error}</div>;
+  }
+
+  if (items.length === 0) {
+    return <div>Товаров пока нет...</div>;
+  }
+
   return (
     <>
       <section className={styles.catalog}>
@@ -99,8 +107,8 @@ const Catalog = () => {
                 <Card
                   key={item.id}
                   item={item}
-                  onClick={handleCardClick}
-                  onOrder={handleOrder}
+                  onClick={() => handleCardClick(item)}
+                  onOrder={openModal}
                 />
               ))
             )}
@@ -112,12 +120,6 @@ const Catalog = () => {
         isOpen={isFilterOpen}
         onClose={closeFilter}
         {...filterProps}
-      />
-
-      <OrderModal
-        item={selectedItem}
-        isOpen={isModalOpen}
-        onClose={closeModal}
       />
     </>
   );

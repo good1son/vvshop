@@ -1,29 +1,25 @@
-import { useState } from 'react';
+import useItemsStore from '@/stores/useItemsStore';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const useCatalog = () => {
-  const [selectedItem, setselectedItem] = useState(null);
+  const items = useItemsStore((state) => state.items);
+  const loading = useItemsStore((state) => state.loading);
+  const error = useItemsStore((state) => state.error);
   const navigate = useNavigate();
 
-  const handleOrder = useCallback((data) => {
-    setselectedItem({ id: String(data.id), title: data.title });
-  }, []);
-
-  const handleCardClick = useCallback((id) => {
-    navigate(`/catalog/${id}`);
-  }, []);
-
-  const closeModal = useCallback(() => {
-    setselectedItem(null);
-  }, []);
+  const handleCardClick = useCallback(
+    (item) => {
+      navigate(`/catalog/${item.id}`);
+    },
+    [navigate]
+  );
 
   return {
-    selectedItem,
-    handleOrder,
+    items,
+    loading,
+    error,
     handleCardClick,
-    closeModal,
-    isModalOpen: !!selectedItem,
   };
 };
 

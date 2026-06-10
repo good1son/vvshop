@@ -1,17 +1,16 @@
 import styles from './CardPreview.module.scss';
 
-const CardPreview = ({ photo, country, year }) => {
+const CardPreview = ({ item, onClick }) => {
   return (
-    <div className={styles.card}>
+    <div
+      className={styles.card}
+      onClick={onClick}
+    >
       <div className={styles.imageWrapper}>
         <img
-          src={photo}
-          alt={`${country} ${year}`}
+          src={item.photo}
+          alt={item.title}
         />
-      </div>
-      <div className={styles.info}>
-        <span className={styles.country}>{country}</span>
-        <span className={styles.year}>{year}</span>
       </div>
     </div>
   );

@@ -1,0 +1,60 @@
+@use '@/styles/variables' as *;
+
+.sliderWrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+
+  .swiperSlideCustom {
+    height: auto;
+
+    width: calc((100% - 16px) / 2);
+    margin-right: 16px;
+
+    @media (min-width: 560px) {
+      width: calc((100% - 20px) / 2);
+      margin-right: 20px;
+    }
+
+    @media (min-width: 900px) {
+      width: calc((100% - (24px * 2)) / 3);
+      margin-right: 24px;
+    }
+
+    @media (min-width: 1200px) {
+      width: calc((100% - (30px * 3)) / 4);
+      margin-right: 30px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  :global {
+    .swiper-wrapper {
+      display: flex;
+      justify-content: var(--swiper-wrapper-justify, flex-start);
+    }
+
+    .swiper-pointer-events:has(.swiper-slide:only-child) {
+      --swiper-wrapper-justify: center;
+    }
+
+    .swiper-pagination-bullet {
+      background: $color-light-beige;
+      transition: background $transition-duration ease;
+
+      &-active {
+        background: $color-dark-gold;
+      }
+    }
+
+    .swiper-pagination {
+      position: relative;
+      margin-top: 24px;
+    }
+  }
+}
